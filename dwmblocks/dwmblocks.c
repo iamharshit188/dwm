@@ -48,7 +48,7 @@ static void (*writestatus) () = pstdout;
 #endif
 
 
-#include "blocks.h"
+#include "config.h"
 
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
 static char statusstr[2][STATUSLENGTH];
@@ -65,14 +65,11 @@ void getcmd(const Block *block, char *output)
 	int i = strlen(block->icon);
 	fgets(output+i, CMDLENGTH-i-delimLen, cmdf);
 	i = strlen(output);
-	if (i == 0) {
-		//return if block and command output are both empty
-		pclose(cmdf);
+	if (i == 0)//return if block and command output are both empty
 		return;
-	}
-	//only chop off newline if one is present at the end
-	i = output[i-1] == '\n' ? i-1 : i;
 	if (delim[0] != '\0') {
+		//only chop off newline if one is present at the end
+		i = output[i-1] == '\n' ? i-1 : i;
 		strncpy(output+i, delim, delimLen); 
 	}
 	else
