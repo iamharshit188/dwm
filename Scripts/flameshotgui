@@ -1,0 +1,4 @@
+#!/bin/sh
+flameshot gui
+# sleep 60
+# pkill flameshot 
