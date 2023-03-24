@@ -1,5 +1,0 @@
-rm -rf ~/.xinitrc
-echo "nitrogen --restore" >> ~/.xinitrc
-echo "dwmblocks &" >> ~/.xinitrc
-echo  "exec dwm" >> ~/.xinitrc
-startx ~/.xinitrc
