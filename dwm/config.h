@@ -11,7 +11,7 @@ static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
 static const int vertpad = 6;
 static const int sidepad = 10;
-static const char *fonts[] = {"JetBrains Mono:size=10:antialias=true:autohint:true" , "3270 Nerd Font:size=10" };
+static const char *fonts[] = {"JetBrains Mono:size=10:antialias=true:autohint:true" , "3270 Nerd Font:size=12" };
 static const char dmenufont[] = {"JetBrains Mono:size=10:antialias=true:autohint:true"};
 static char normbgcolor[] = "#11111B";
 static char normbordercolor[] = "#444444";
