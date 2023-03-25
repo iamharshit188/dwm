@@ -20,7 +20,10 @@ static char selfgcolor[] = "#11111B";
 static char selbordercolor[] = "#ffffff";
 static char selbgcolor[] = "#ffffff";
 static char *colors[][3] = {
-    /*               fg           bg           border   */
+#define STATUSCOLOR col_black
+#define SELCOLOR col_yellow
+    
+	/*               fg           bg           border   */
     [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
     [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
 };
