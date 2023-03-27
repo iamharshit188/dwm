@@ -1,9 +1,9 @@
 #! /bin/bash
 echo "Welcome to the installation of DWM by @iamharshit188 (Harshit Tiwari)"
 echo " An Important Note : Please enter sudo / root password whenever prompted, To install it without any issues."
-
+echo " If you are Using any desktop environment then logout and execute this script from console/tty"
 echo "Installing necessary packages"
-sudo pacman -S xorg-server xorg-xinit git python-pywal feh alacritty dunst ttf-jetbrains-mono --noconfirm
+sudo pacman -S xorg-server xorg-xinit git python-pywal feh alacritty dunst ttf-jetbrains-mono picom --noconfirm
 echo "All necessary packages download and installed."
 echo "Cloning repository"
 mkdir ~/DWMbyHt
