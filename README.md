@@ -1,3 +1,5 @@
+NOTE: dont use Install (Install.sh) script, will be fixed later on.
+Apologies :(
 # DWM config files
 
 ## Features available 
