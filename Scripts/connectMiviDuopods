@@ -1,0 +1,4 @@
+bluetoothctl disconnect 85:23:2C:89:85:17
+bluetoothctl remove 85:23:2C:89:85:17
+bluetoothctl scan on
+bluetoothctl connect 85:23:2C:89:85:17
