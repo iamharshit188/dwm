@@ -13,7 +13,9 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format = 'on [ArchLinux ](bold yellow) '
+#format = 'on [ArchLinux ](bold yellow) '
+format = 'on [$hostname ](bold yellow) '
+#you can set custom hostname too
 trim_at = "."
 disabled = false
 
