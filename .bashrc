@@ -13,7 +13,7 @@ alias rm='trash -v'
 alias nv='neovide'
 alias killcmus='sudo kill -9 "$(pidof cmus)"'
 alias downloadplaylist="yt-dlp -f 'bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[height<=720][ext=mp4]/best' --yes-playlist"
-alias downloadsongs="youtube-dl --extract-audio --audio-format mp3 "
+alias downloadsongs="yt-dlp --extract-audio --audio-format mp3 "
 alias ytfzf='ytfzf  --video-pref=720p'
 alias grep='grep --color=auto'
 eval "$(starship init bash)"
