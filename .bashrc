@@ -4,7 +4,6 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-echo "Kisi kaam ke layak ni ho :)"
 cat ~/.cache/wal/sequences
 export PATH=$PATH:/home/iamharshit188/.local/bin/
 alias findpackage='pacman -Qq | fzf'
