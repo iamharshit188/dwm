@@ -1,4 +1,4 @@
-sudo pacman -S libx11 libxinerama libxft webkit2gtk alacritty xorg-xinit xorg-server pulseaudio-bluetooth pulseaudio bluez bluez-utils ytfzf fzf bc jq yt-dlp mpv sxiv 
+sudo pacman -S libx11 libxinerama libxft webkit2gtk alacritty xorg-xinit xorg-server pulseaudio-bluetooth pulseaudio bluez bluez-utils ytfzf fzf bc jq yt-dlp mpv sxiv opendoas
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/src
 mkdir -p ~/.config/alacritty
@@ -30,4 +30,4 @@ makepkg -si
 cp ~/.local/src/dwm/.xinitrc ~/
 cp ~/.local/src/dwm/.bashrc ~/
 cp ~/.local/src/dwm/.config/starship.toml ~/.config/
-
+sudo echo "permit :wheel" >> /etc/doas.conf
