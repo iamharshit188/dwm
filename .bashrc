@@ -14,6 +14,7 @@ alias killcmus='sudo kill -9 "$(pidof cmus)"'
 alias downloadplaylist="yt-dlp -f 'bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[height<=720][ext=mp4]/best' --yes-playlist"
 alias downloadsongs="yt-dlp --extract-audio --audio-format mp3 "
 alias ytfzf='ytfzf  --video-pref=720p'
+alias sudo='doas'
 alias grep='grep --color=auto'
 eval "$(starship init bash)"
 PS1='[\u@\h \W]\$ '
