@@ -1,5 +1,5 @@
 ## Installing DWM dependencies
-sudo pacman -S libx11 libxft imagemagick feh libxinerama xorg-server xorg-xinit ttf-jetbrains-mono noto-fonts python-pip --noconfirm 
+sudo pacman -S libx11 libxft imagemagick feh libxinerama xorg-server xorg-xinit ttf-jetbrains-mono noto-fonts python-pip trash-cli --noconfirm 
 ## Installing Pywal for Wallpaper color support
 pip install pywal 
 ## Installing DWM
