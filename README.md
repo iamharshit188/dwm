@@ -8,5 +8,5 @@
 ### Usage 
  `git clone https://github.com/iamharshit188/dwm` <br>
  `cd dwm` <br>
- `./Install.sh` <br>
+ `./Install.sh` <br> [Script in Now Updated]
 
