@@ -4,22 +4,11 @@
 [[ $- != *i* ]] && return
 
 # Wal sequences for terminal colors
-cat ~/.cache/wal/sequences
+#cat ~/.cache/wal/sequences
 
 # Environment variables for Android SDK, Flutter, Dart, and Java
-export ANDROID_HOME=/opt/android-sdk
-export PATH="$PATH:/opt/flutter/bin"
-export PATH="$PATH:$ANDROID_HOME/cmdline-tools/tools/bin"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-export PATH="$PATH:$ANDROID_HOME/tools"
-export PATH="$PATH:/opt/dart-sdk/bin"
-export PATH="/usr/lib/jvm/java-8-openjdk/bin:$PATH"
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-
-# Set Qt library path
-export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/qt/plugins/platforms
-
+export PATH="/home/iamharshit188/.flutter/bin:$PATH"
+export PATH="/home/iamharshit188/Android/Sdk/cmdline-tools/latest/bin:$PATH"
 # Your existing aliases
 alias findpackage='pacman -Qq | fzf'
 alias ls='ls --color=auto'
@@ -36,3 +25,4 @@ eval "$(starship init bash)"
 
 # Custom PS1 prompt
 PS1='[\u@\h \W]\$ '
+
