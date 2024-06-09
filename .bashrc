@@ -7,8 +7,9 @@
 #cat ~/.cache/wal/sequences
 
 # Environment variables for Android SDK, Flutter, Dart, and Java
-export PATH="/home/iamharshit188/.flutter/bin:$PATH"
-export PATH="/home/iamharshit188/Android/Sdk/cmdline-tools/latest/bin:$PATH"
+export PATH="/home/$(whoami)/.flutter/bin:$PATH"
+export PATH="/home/$(whoami)/.local/bin:$PATH"
+export PATH="/home/$(whoami)/Android/Sdk/cmdline-tools/latest/bin:$PATH"
 # Your existing aliases
 alias findpackage='pacman -Qq | fzf'
 alias ls='ls --color=auto'
