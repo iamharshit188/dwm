@@ -25,15 +25,15 @@ sudo make clean install
 echo "DWMblocks Installed"
 
 ## Adding all the Fonts
-cd ../Fonts/
+cd ~/dwm/Fonts/
 sudo mv * /usr/share/fonts/
 mkdir -p ~/.local/bin/ ~/.local/src/
-cd ../Scripts/  
+cd ~/dwm/Scripts/  
 mv * ~/.local/bin/
 cd ..
-mv ./.xinitrc ./.bashrc ~/
+mv ~/dwm/.xinitrc ~/dwm/.bashrc ~/
 ## Adding touchpad support for laptops
-sudo mv ./30-touchpad.conf /etc/X11/xorg.conf.d/
+sudo mv ~/dwm/30-touchpad.conf /etc/X11/xorg.conf.d/
 clear
 echo "DWM has been installed , Simple Terminal has been installed , now reboot "
 echo "type startx after logging in to tty"
