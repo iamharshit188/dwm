@@ -2,6 +2,7 @@
 static const Block blocks[] = {
 
 /*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
+  {"",  "fan_speed.sh", 1, 0},  // Update interval set to 1 second
   {"",  "cpu", 5,  4},
   {"",  "cpubars",  1,  16},
   {"",  "nettraf",  1,  16},
