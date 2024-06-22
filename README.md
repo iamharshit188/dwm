@@ -7,7 +7,10 @@ To Install and use it :
 `./Install.sh`
 
 ## Screenshots
-![https://github.com/iamharshit188/dwm/blob/master/1.png?raw=true]
-![https://github.com/iamharshit188/dwm/blob/master/2.png?raw=true]
-![https://github.com/iamharshit188/dwm/blob/master/3.png?raw=true]
+![Screenshot](https://github.com/iamharshit188/dwm/blob/master/1.png?raw=true)
+<br>
+![Screenshot](https://github.com/iamharshit188/dwm/blob/master/2.png?raw=true)
+<br>
+![Screenshot](https://github.com/iamharshit188/dwm/blob/master/3.png?raw=true)
+
 
