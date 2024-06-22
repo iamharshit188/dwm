@@ -3,7 +3,9 @@
 
 To Install and use it : 
 `git clone https://github.com/iamharshit188/dwm --depth 1`
+<br>
 `cd dwm`
+<br>
 `./Install.sh`
 
 ## Screenshots
