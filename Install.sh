@@ -4,14 +4,14 @@ loc=$(pwd)
 ## Setting up chaotic-aur
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' --noconfirm
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
 sudo mv $loc/pacman.conf /etc/pacman.conf
 
 ## Detecting Nvidia Card
  sh $loc/NvidiaDetector.sh
 
-sudo pacman -Syu libx11 libxft imagemagick feh libxinerama xorg-server xorg-xinit ttf-jetbrains-mono noto-fonts python-pip trash-cli asusctl envycontrol google-chrome openssh libappindicator-gtk3 --noconfirm 
+sudo pacman -Syu libx11 libxft imagemagick feh libxinerama xorg-server xorg-xinit ttf-jetbrains-mono noto-fonts python-pip trash-cli asusctl envycontrol google-chrome openssh libappindicator-gtk3 tlp powertop --noconfirm 
 ## Installing Pywal for Wallpaper color support
 pip install pywal --break
 ## Installing DWM
@@ -36,6 +36,11 @@ echo "Installing dwmblocks and applying patches :)"
 sudo make clean install
 echo "DWMblocks Installed"
 
+# Adding TLP support Underclocking CPU to 2.70Ghz
+sudo mv $loc/grub /etc/default/
+sudo grub-config -o /boot/grub/grub.cfg
+sudo mv $loc/tlp.conf /etc/tlp.conf
+sudo systemctl enable tlp --now
 ## Adding all the Fonts
 cd $loc 
 sudo mv $loc/Fonts * /usr/share/fonts/
