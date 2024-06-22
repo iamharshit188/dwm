@@ -2,6 +2,7 @@
 ##### A simple yet beautiful DWM setup with color palette 
 
 To Install and use it : 
+<br>
 `git clone https://github.com/iamharshit188/dwm --depth 1`
 <br>
 `cd dwm`
