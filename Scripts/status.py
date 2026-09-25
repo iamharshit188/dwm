@@ -1,9 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
+import os
 import subprocess
 
 # Get the current colorscheme using pywal
-colors = subprocess.check_output(['wal', '-i', '~/.config/wallpapers/wall1.jpg', '-q', '-t']).decode('utf-8').split('\n')
+colors = subprocess.check_output(['wal', '-i', os.path.expanduser('~/.config/wallpapers/wall1.jpg'), '-q', '-t']).decode('utf-8').split('\n')
 
 STATUSCOLOR = colors[0]
 SELCOLOR = colors[1]

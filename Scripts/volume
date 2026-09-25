@@ -26,7 +26,8 @@ split() {
 	printf '%s' "$@"
 }
 vol="$(split "$vol" ".")"
-vol="${vol##0}"
+vol="${vol#"${vol%%[!0]*}"}"
+[ -z "$vol" ] && vol=0
 
 case 1 in
 	$((vol >= 70)) ) icon="🔊" ;;

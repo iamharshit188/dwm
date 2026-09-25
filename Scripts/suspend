@@ -1,2 +1,2 @@
-systemctl suspend
-slock
+#!/bin/sh
+slock systemctl suspend
