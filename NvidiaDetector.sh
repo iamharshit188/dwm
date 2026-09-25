@@ -21,8 +21,8 @@ echo "$nvidia_cards"
 # Check if nvidia-smi is installed
 if ! command -v nvidia-smi &> /dev/null
 then
-    echo "nvidia-smi command not found. Please install NVIDIA drivers."
-    exit 1
+    echo "NVIDIA driver not detected yet — install drivers, then run nvidia-smi to confirm."
+    exit 0
 fi
 
 # Use nvidia-smi to get detailed information about NVIDIA cards
