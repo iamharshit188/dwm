@@ -1,6 +1,8 @@
 #!/bin/sh
 # To execute dwmblocks.
 dwmblocks &
+# Notification daemon (several Scripts/* modules call notify-send on click).
+dunst &
 #To add transparency
 picom &
 #To restore the wallpaper you've applied last time.

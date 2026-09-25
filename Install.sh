@@ -18,7 +18,7 @@ sudo mv "$loc/pacman.conf" /etc/pacman.conf
 # or the driver isn't installed yet, so don't let it abort the whole install.
 bash "$loc/NvidiaDetector.sh" || true
 
-sudo pacman -Syu libx11 libxft imagemagick feh libxinerama xorg-server xorg-xinit ttf-jetbrains-mono noto-fonts python-pip trash-cli asusctl envycontrol google-chrome openssh libappindicator-gtk3 tlp powertop --noconfirm
+sudo pacman -Syu libx11 libxft imagemagick feh libxinerama xorg-server xorg-xinit ttf-jetbrains-mono noto-fonts python-pip trash-cli asusctl envycontrol google-chrome openssh libappindicator-gtk3 tlp powertop dunst libnotify --noconfirm
 ## Installing Pywal for Wallpaper color support
 pip install --user --break-system-packages pywal
 ## Installing DWM
@@ -62,6 +62,12 @@ for f in .bashrc .xinitrc; do
 	[ -f "$HOME/$f" ] && cp "$HOME/$f" "$HOME/$f.bak.$(date +%s)"
 	cp "$loc/$f" "$HOME/$f"
 done
+## Seeding a default wallpaper (status.py expects ~/.config/wallpapers/wall1.jpg to exist)
+mkdir -p ~/.config/wallpapers
+if [ ! -f ~/.config/wallpapers/wall1.jpg ]; then
+	default_wall=$(find "$loc/.walls" -maxdepth 1 -type f | sort | head -n 1)
+	[ -n "$default_wall" ] && cp "$default_wall" ~/.config/wallpapers/wall1.jpg
+fi
 ## Adding touchpad support for laptops
 [ -f /etc/X11/xorg.conf.d/30-touchpad.conf ] && sudo cp /etc/X11/xorg.conf.d/30-touchpad.conf "/etc/X11/xorg.conf.d/30-touchpad.conf.bak.$(date +%s)"
 sudo mv "$loc/30-touchpad.conf" /etc/X11/xorg.conf.d/

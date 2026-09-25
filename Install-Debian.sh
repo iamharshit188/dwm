@@ -395,6 +395,27 @@ install_dotfiles() {
 	chmod +x "$HOME/.xinitrc"
 }
 
+# install_default_wallpaper — Scripts/status.py hard-codes
+# ~/.config/wallpapers/wall1.jpg for its `wal -i` call; seed it from the
+# bundled wallpapers so status.py doesn't fail on the very first startx.
+install_default_wallpaper() {
+	local dest_dir="$HOME/.config/wallpapers"
+	local dest="$dest_dir/wall1.jpg"
+	mkdir -p "$dest_dir"
+	if [ -f "$dest" ]; then
+		info "Default wallpaper already present at $dest"
+		return 0
+	fi
+	local default_wall
+	default_wall="$(find "$repo_dir/.walls" -maxdepth 1 -type f | sort | head -n 1)"
+	if [ -n "$default_wall" ]; then
+		cp "$default_wall" "$dest"
+		info "Seeded default wallpaper -> $dest"
+	else
+		warn "No wallpaper found under $repo_dir/.walls to seed $dest with."
+	fi
+}
+
 install_fonts() {
 	local dest="/usr/local/share/fonts/dwm-nerd-fonts"
 	info "Installing bundled Nerd Fonts to $dest..."
@@ -449,6 +470,7 @@ Installed:
   - slock, picom, feh, flameshot, dunst and the rest of the apt package list
   - Scripts/* -> ~/.local/bin (dwmblocks status modules + utilities)
   - .bashrc, .xinitrc -> $HOME (any previous versions were backed up first)
+  - A default wallpaper -> ~/.config/wallpapers/wall1.jpg (status.py needs this to exist)
   - Bundled Nerd Fonts -> /usr/local/share/fonts/dwm-nerd-fonts (fc-cache refreshed)
   - tlp.conf -> /etc/tlp.conf, tlp.service enabled and started
   - 30-touchpad.conf -> /etc/X11/xorg.conf.d/
@@ -488,6 +510,7 @@ main() {
 
 	install_user_scripts
 	install_dotfiles
+	install_default_wallpaper
 	install_fonts
 	install_tlp_config
 	enable_tlp
